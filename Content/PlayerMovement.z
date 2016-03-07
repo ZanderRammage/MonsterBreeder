@@ -1,0 +1,102 @@
+class PlayerMovement : ZilchComponent
+{
+    [Property]
+    var Health : Integer = 12;
+    var IFrames : Real = 0;
+    
+    [Property]
+    var Speed : Real = 5.0;
+    
+    [Property]
+    var Timer : Real = 0;
+    
+    var Direction : Real3 = Real3(0,0,0);
+    
+    
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+        Zero.Connect(Zero.Keyboard, Events.KeyUp, this.OnKeyUp);
+    }
+    
+    
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        this.Timer += event.Dt;
+        this.IFrames += event.Dt;
+/*--------------------------------------------------------------------------Max Speed---------------------------------------------------------------------------*/
+        if(this.Direction.X <= -7)
+        {
+            this.Direction.X = -7;
+        }
+        
+        if(this.Direction.Y <= -7)
+        {
+            this.Direction.Y = -7;
+        }
+        
+        if(this.Direction.X >= 7)
+        {
+            this.Direction.X = 7;
+        }
+        
+        if(this.Direction.Y >= 7)
+        {
+            this.Direction.Y = 7;
+        }
+        this.Owner.RigidBody.Velocity = this.Direction;
+/*----------------------------------------------------------------------Keyboard Movement----------------------------------------------------------------------*/
+        var up = Zero.Keyboard.KeyIsDown(Keys.W) || Zero.Keyboard.KeyIsDown(Keys.Up);
+        var down = Zero.Keyboard.KeyIsDown(Keys.S) || Zero.Keyboard.KeyIsDown(Keys.Down);
+        var right = Zero.Keyboard.KeyIsDown(Keys.D) || Zero.Keyboard.KeyIsDown(Keys.Right);
+        var left = Zero.Keyboard.KeyIsDown(Keys.A) || Zero.Keyboard.KeyIsDown(Keys.Left);
+        
+        if(up)
+        {
+            this.Direction.Y +=7;
+        }
+        
+        if(left)
+        {
+            this.Direction.X -=7;
+        }
+        
+        if(down)
+        {
+            this.Direction.Y -=7;
+        }
+        
+        if(right)
+        {
+            this.Direction.X +=7;
+        }
+        this.Owner.RigidBody.Velocity = this.Direction;
+    }
+    
+    
+    function OnKeyUp(event : KeyboardEvent)
+    { 
+        var up = Zero.Keyboard.KeyIsUp(Keys.W);
+        var down = Zero.Keyboard.KeyIsUp(Keys.S);
+        var left = Zero.Keyboard.KeyIsUp(Keys.A);
+        var right = Zero.Keyboard.KeyIsUp(Keys.D);
+/*-----------------------------------------------------------Stops you from moving if all keys are up----------------------------------------------------------*/
+        if (up && down && left && right)
+        {
+            this.Direction = Real3(0,0,0);
+            this.Owner.RigidBody.Velocity = this.Direction;
+        }
+/*----------------------------------------------Sets velocity of specific direction back to 0 when key is not held---------------------------------------------*/
+        if(event.Key == Keys.W || event.Key == Keys.S)
+        {
+            this.Direction.Y = 0;
+            this.Owner.RigidBody.Velocity = this.Direction;
+        }
+        
+        if(event.Key == Keys.A || event.Key == Keys.D)
+        {
+            this.Direction.X = 0;
+            this.Owner.RigidBody.Velocity = this.Direction;
+        }
+    }
+}

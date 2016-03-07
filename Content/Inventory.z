@@ -1,0 +1,33 @@
+class Inventory : ZilchComponent
+{
+    [Property]
+    var Sticks : Integer;
+    [Property]
+    var Stones : Integer;
+    [Property]
+    var Slime : Integer;
+    [Property]
+    var Anise : Integer;
+    [Property]
+    var Toadstools : Integer;
+    [Property]
+    var TotallyNotBlood : Integer;
+    [Property]
+    var Crabs : Integer;
+    [Property]
+    var Shells : Integer;
+    [Property]
+    var Water : Integer;
+    
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+    
+    
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        Console.WriteLine("Sticks: `this.Sticks` | Stones: `this.Stones` | Slime: `this.Slime`  | Anise: `this.Anise` | Toadstool: `this.Toadstools`");
+        Console.WriteLine("Blood: `this.TotallyNotBlood`  | Crabs: `this.Crabs`  | Shells: `this.Shells` | Water: `this.Water`");
+    }
+}

@@ -1,0 +1,35 @@
+class Crafting : ZilchComponent
+{
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+    
+    
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        var sticks = this.Space.FindObjectByName("Player").Inventory.Sticks;
+        var stones = this.Space.FindObjectByName("Player").Inventory.Stones;
+        var slime = this.Space.FindObjectByName("Player").Inventory.Slime;
+        var anise = this.Space.FindObjectByName("Player").Inventory.Anise;
+        var toadstools = this.Space.FindObjectByName("Player").Inventory.Toadstools;
+        var totallyNotBlood = this.Space.FindObjectByName("Player").Inventory.TotallyNotBlood;
+        var crabs = this.Space.FindObjectByName("Player").Inventory.Crabs;
+        var shells = this.Space.FindObjectByName("Player").Inventory.Shells;
+        var water = this.Space.FindObjectByName("Player").Inventory.Water;
+        
+        
+        if(/*in crafting station*/false)
+        {
+            /*
+            if(have materials for egg 1)
+            {
+                remove materials
+                gain egg
+            }
+            
+            repeat for each future egg.
+            */
+        }
+    }
+}

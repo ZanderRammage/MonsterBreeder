@@ -1,0 +1,7 @@
+ContentLibrary = 
+{
+	string Name = "MonsterBreeder",
+	uint64 LibraryId = 56ca0203e70189bf,
+	string SourceControlType = "",
+	bool ReadOnly = false,
+},
