@@ -1,5 +1,9 @@
 class Crafting : ZilchComponent
 {
+    var CraftingActive : Boolean = false;
+    var Egg1 : Boolean = false;
+    var Egg2 : Boolean = false;
+    
     function Initialize(init : CogInitializer)
     {
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
@@ -18,18 +22,29 @@ class Crafting : ZilchComponent
         var shells = this.Space.FindObjectByName("Player").Inventory.Shells;
         var water = this.Space.FindObjectByName("Player").Inventory.Water;
         
-        
-        if(/*in crafting station*/false)
+        if(sticks >= 1 && stones >= 1)
         {
-            /*
-            if(have materials for egg 1)
+            this.Egg1 = true;
+            this.Space.FindObjectByName("Egg1").Sprite.Color.W = 1;
+        }
+        else if(sticks != 1 && stones != 1)
+        {
+            this.Egg1 = false;
+            this.Space.FindObjectByName("Egg1").Sprite.Color.W = 0.5;
+        }
+        
+        if(sticks == 2 && stones == 2)
+        {
+            this.Egg2 = true;
+        }
+        if(this.CraftingActive == true)
+        {
+            if(Zero.Keyboard.KeyIsPressed(Keys.E))
             {
-                remove materials
-                gain egg
+            /*var spawnPosition = 
+            var archetypeToSpawn = Archetype.Find("Bullet");
+            var createdBullet = this.Space.CreateAtPosition(archetypeToSpawn, spawnPosition);*/
             }
-            
-            repeat for each future egg.
-            */
         }
     }
 }

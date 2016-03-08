@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "CraftingArea",
+		uint64 ResourceId = 56c8d0d8a043948f,
+	},
+},

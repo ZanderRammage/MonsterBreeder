@@ -5,9 +5,6 @@ class PlayerMovement : ZilchComponent
     var IFrames : Real = 0;
     
     [Property]
-    var Speed : Real = 5.0;
-    
-    [Property]
     var Timer : Real = 0;
     
     var Direction : Real3 = Real3(0,0,0);
@@ -25,24 +22,24 @@ class PlayerMovement : ZilchComponent
         this.Timer += event.Dt;
         this.IFrames += event.Dt;
 /*--------------------------------------------------------------------------Max Speed---------------------------------------------------------------------------*/
-        if(this.Direction.X <= -7)
+        if(this.Direction.X <= -5)
         {
-            this.Direction.X = -7;
+            this.Direction.X = -5;
         }
         
-        if(this.Direction.Y <= -7)
+        if(this.Direction.Y <= -5)
         {
-            this.Direction.Y = -7;
+            this.Direction.Y = -5;
         }
         
-        if(this.Direction.X >= 7)
+        if(this.Direction.X >= 5)
         {
-            this.Direction.X = 7;
+            this.Direction.X = 5;
         }
         
-        if(this.Direction.Y >= 7)
+        if(this.Direction.Y >= 5)
         {
-            this.Direction.Y = 7;
+            this.Direction.Y = 5;
         }
         this.Owner.RigidBody.Velocity = this.Direction;
 /*----------------------------------------------------------------------Keyboard Movement----------------------------------------------------------------------*/
@@ -53,22 +50,22 @@ class PlayerMovement : ZilchComponent
         
         if(up)
         {
-            this.Direction.Y +=7;
+            this.Direction.Y +=5;
         }
         
         if(left)
         {
-            this.Direction.X -=7;
+            this.Direction.X -=5;
         }
         
         if(down)
         {
-            this.Direction.Y -=7;
+            this.Direction.Y -=5;
         }
         
         if(right)
         {
-            this.Direction.X +=7;
+            this.Direction.X +=5;
         }
         this.Owner.RigidBody.Velocity = this.Direction;
     }
