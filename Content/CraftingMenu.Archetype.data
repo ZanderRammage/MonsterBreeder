@@ -14,13 +14,13 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [30, 0, 0],
+		Vec3 Translation = [0, 0, 0],
 		Vec3 Scale = [10, 14, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
 	Sprite = 
 	{
-		bool Visible = true,
+		bool Visible = false,
 		bool VisibilityCulling = true,
 		bool VisibilityEvents = true,
 		bool CastShadows = false,
@@ -91,97 +91,30 @@ Cog =
 					},
 					Named = 
 					{
-						string Name = "Sticks",
-					},
-					Archetyped = 
-					{
-						string Name = "56ca18bdf04f630b:Sticks",
+						string Name = "SpriteText",
 					},
 					Transform = 
 					{
-						Vec3 Translation = [1.49999619, 0.535713673, 0],
+						Vec3 Translation = [-0.702110291, -1.07142925, 0],
 						Vec3 Scale = [1, 1.07142842, 1],
 						Quat Rotation = [0, 0, 0, 1],
 					},
-					Sprite = 
+					SpriteText = 
 					{
 						bool Visible = true,
 						bool VisibilityCulling = true,
 						bool VisibilityEvents = true,
 						bool CastShadows = false,
-						Vec4 Color = [0.454999983, 0.245699912, 0, 1],
+						Vec4 Color = [1, 1, 1, 1],
 						BlendMode BlendMode = Alpha,
 						SpriteGeometryMode GeometryMode = ZPlane,
 						string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-						string SpriteSource = "5275aa4d802dd6dc:Square",
-						bool RenderMask = false,
-						bool FlipX = false,
-						bool FlipY = false,
-						bool AnimationActive = true,
-						float AnimationSpeed = 1,
-						uint StartFrame = 0,
-					},
-					RigidBody = 
-					{
-						bool Static = true,
-						bool Asleep = false,
-						bool Kinematic = false,
-						bool RotationLocked = false,
-						bool Mode2D = true,
-						bool AllowSleep = true,
-						bool Inherit2DMode = true,
-						Vec3 Velocity = [0, 0, 0],
-						Vec3 AngularVelocity = [0, 0, 0],
-					},
-					BoxCollider = 
-					{
-						bool Ghost = true,
-						bool SendsMessages = true,
-						bool Seamless = true,
-						string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-						string SerializedGroupName = "4e740859314e5515:DefaultGroup",
-						Vec3 Offset = [0, 0, 0],
-						Vec3 Size = [0.5, 0.5, 0.5],
-					},
-					Sticks = 
-					{
-					},
-					Hierarchy = 
-					{
-						Cog = 
-						{
-							LinkId = 
-							{
-								uint Id = 4,
-							},
-							Named = 
-							{
-								string Name = "SpriteText",
-							},
-							Transform = 
-							{
-								Vec3 Translation = [-0.289974213, 0.310969353, 1],
-								Vec3 Scale = [1, 1, 1],
-								Quat Rotation = [0, 0, 0, 1],
-							},
-							SpriteText = 
-							{
-								bool Visible = true,
-								bool VisibilityCulling = true,
-								bool VisibilityEvents = true,
-								bool CastShadows = false,
-								Vec4 Color = [1, 1, 1, 1],
-								BlendMode BlendMode = Alpha,
-								SpriteGeometryMode GeometryMode = ZPlane,
-								string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-								string FontName = "4e7bac697bec55c5:Verdana",
-								uint FontSize = 30,
-								string Text = "x1",
-								TextAlign Align = Left,
-								float PixelsPerUnit = 64,
-								bool Smoothing = true,
-							},
-						},
+						string FontName = "4e7bac697bec55c5:Verdana",
+						uint FontSize = 30,
+						string Text = "Egg 1",
+						TextAlign Align = Left,
+						float PixelsPerUnit = 64,
+						bool Smoothing = true,
 					},
 				},
 			},
@@ -190,19 +123,23 @@ Cog =
 		{
 			LinkId = 
 			{
-				uint Id = 5,
+				uint Id = 4,
 			},
 			Named = 
 			{
-				string Name = "SpriteText",
+				string Name = "Egg2",
+			},
+			Archetyped = 
+			{
+				string Name = "56c8a32a85eb67b5:Egg2",
 			},
 			Transform = 
 			{
-				Vec3 Translation = [-0.470210552, 0.357142866, 1],
+				Vec3 Translation = [-0.400000006, 0.214285731, 1],
 				Vec3 Scale = [0.100000001, 0.0714285746, 1],
 				Quat Rotation = [0, 0, 0, 1],
 			},
-			SpriteText = 
+			Sprite = 
 			{
 				bool Visible = true,
 				bool VisibilityCulling = true,
@@ -212,12 +149,125 @@ Cog =
 				BlendMode BlendMode = Alpha,
 				SpriteGeometryMode GeometryMode = ZPlane,
 				string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-				string FontName = "4e7bac697bec55c5:Verdana",
-				uint FontSize = 30,
-				string Text = "Egg 1",
-				TextAlign Align = Left,
-				float PixelsPerUnit = 64,
-				bool Smoothing = true,
+				string SpriteSource = "56c8d1bf67306bf2:egg2",
+				bool RenderMask = false,
+				bool FlipX = false,
+				bool FlipY = false,
+				bool AnimationActive = true,
+				float AnimationSpeed = 1,
+				uint StartFrame = 0,
+			},
+			Reactive = 
+			{
+				bool Active = true,
+				bool CaptureMouse = false,
+			},
+			Hierarchy = 
+			{
+				Cog = 
+				{
+					LinkId = 
+					{
+						uint Id = 5,
+					},
+					Named = 
+					{
+						string Name = "SpriteText",
+					},
+					Transform = 
+					{
+						Vec3 Translation = [-0.707818747, -1.00343764, 0],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0, 0, 0, 1],
+					},
+					SpriteText = 
+					{
+						bool Visible = true,
+						bool VisibilityCulling = true,
+						bool VisibilityEvents = true,
+						bool CastShadows = false,
+						Vec4 Color = [1, 1, 1, 1],
+						BlendMode BlendMode = Alpha,
+						SpriteGeometryMode GeometryMode = ZPlane,
+						string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+						string FontName = "4e7bac697bec55c5:Verdana",
+						uint FontSize = 30,
+						string Text = "Egg 2",
+						TextAlign Align = Left,
+						float PixelsPerUnit = 64,
+						bool Smoothing = true,
+					},
+				},
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 6,
+			},
+			Named = 
+			{
+				string Name = "StickCost",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [-0.25, 0.428571463, 1],
+				Vec3 Scale = [0.100000001, 0.0714285746, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Sprite = 
+			{
+				bool Visible = true,
+				bool VisibilityCulling = true,
+				bool VisibilityEvents = true,
+				bool CastShadows = false,
+				Vec4 Color = [0.454901963, 0.247058824, 0, 1],
+				BlendMode BlendMode = Alpha,
+				SpriteGeometryMode GeometryMode = ZPlane,
+				string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+				string SpriteSource = "5275aa4d802dd6dc:Square",
+				bool RenderMask = false,
+				bool FlipX = false,
+				bool FlipY = false,
+				bool AnimationActive = true,
+				float AnimationSpeed = 1,
+				uint StartFrame = 0,
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 7,
+			},
+			Named = 
+			{
+				string Name = "StoneCost",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [-0.100000001, 0.428571463, 1],
+				Vec3 Scale = [0.100000001, 0.0714285746, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Sprite = 
+			{
+				bool Visible = true,
+				bool VisibilityCulling = true,
+				bool VisibilityEvents = true,
+				bool CastShadows = false,
+				Vec4 Color = [0.388235331, 0.388235331, 0.388235301, 1],
+				BlendMode BlendMode = Alpha,
+				SpriteGeometryMode GeometryMode = ZPlane,
+				string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+				string SpriteSource = "5275aa4d802dd6dc:Square",
+				bool RenderMask = false,
+				bool FlipX = false,
+				bool FlipY = false,
+				bool AnimationActive = true,
+				float AnimationSpeed = 1,
+				uint StartFrame = 0,
 			},
 		},
 	},

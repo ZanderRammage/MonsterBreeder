@@ -1,0 +1,74 @@
+class PlayerAniChange : ZilchComponent
+{
+    var Up : Boolean = false;
+    var Down : Boolean = false;
+    var Right : Boolean = false;
+    var Left : Boolean = false;
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+        Zero.Connect(Zero.Keyboard, Events.KeyDown, this.OnKeyDown);
+        Zero.Connect(Zero.Keyboard, Events.KeyUp, this.OnKeyUp);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        if(this.Up == false && this.Down == false && this.Right == false && this.Left == false &&
+           this.Owner.Sprite.SpriteSource.Name != "Idle")
+        {
+            this.Owner.Sprite.SpriteSource = SpriteSource.Find("Idle");
+        }
+    }
+    
+    
+    function OnKeyDown(event : KeyboardEvent)
+    {
+        if(event.Key == Keys.W || event.Key == Keys.Up && this.Owner.Sprite.SpriteSource.Name != "WalkBackWard2")
+        {
+            this.Owner.Sprite.SpriteSource = SpriteSource.Find("WalkBackWard2");
+            this.Up = true;
+        }
+        
+        if(event.Key == Keys.A || event.Key == Keys.Left && this.Owner.Sprite.SpriteSource.Name != "WalkLeft")
+        {
+            this.Owner.Sprite.SpriteSource = SpriteSource.Find("WalkLeft");
+            this.Left = true;
+        }
+        
+        if(event.Key == Keys.S || event.Key == Keys.Down && this.Owner.Sprite.SpriteSource.Name != "WalkForward")
+        {
+            this.Owner.Sprite.SpriteSource = SpriteSource.Find("WalkForward");
+            this.Down = true;
+        }
+        
+        if(event.Key == Keys.D || event.Key == Keys.Right && this.Owner.Sprite.SpriteSource.Name != "WalkRight")
+        {
+            this.Owner.Sprite.SpriteSource = SpriteSource.Find("WalkRight");
+            this.Right = true;
+        }
+    }
+    
+    
+    function OnKeyUp(event : KeyboardEvent)
+    {
+        if(event.Key == Keys.W || event.Key == Keys.Up)
+        {
+            this.Up = false;
+        }
+        
+        if(event.Key == Keys.A || event.Key == Keys.Left)
+        {
+            this.Left = false;
+        }
+        
+        if(event.Key == Keys.S || event.Key == Keys.Down)
+        {
+            this.Down = false;
+        }
+        
+        if(event.Key == Keys.D || event.Key == Keys.Right)
+        {
+            this.Right = false;
+        }
+    }
+}

@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "MAT_Anise.Collect",
+		uint64 ResourceId = 56f630d9212e2a96,
+	},
+},

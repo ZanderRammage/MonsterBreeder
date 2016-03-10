@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "MAT_Toadstool.Collect",
+		uint64 ResourceId = 56f63711662f4c91,
+	},
+},

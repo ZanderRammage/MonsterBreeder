@@ -1,0 +1,32 @@
+class GoRight : ZilchComponent
+{
+    var Player : Real3;
+    var Camera : Real3;
+    
+    
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+        Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
+    }
+    
+    
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        this.Player = this.Space.FindObjectByName("Player").Transform.Translation;
+        this.Camera = this.Space.FindObjectByName("Camera").Transform.Translation;
+    }
+    
+    
+    function OnCollisionStarted(event : CollisionEvent)
+    {
+        if(event.OtherObject.Name == "Player")
+        {
+            this.Camera.X += 39;
+            this.Player.X += 5;
+        }
+        
+        this.Space.FindObjectByName("Player").Transform.Translation = this.Player;
+        this.Space.FindObjectByName("Camera").Transform.Translation = this.Camera;
+    }
+}

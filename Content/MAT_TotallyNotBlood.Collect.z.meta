@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "MAT_TotallyNotBlood.Collect",
+		uint64 ResourceId = 56f636b88a0c968d,
+	},
+},

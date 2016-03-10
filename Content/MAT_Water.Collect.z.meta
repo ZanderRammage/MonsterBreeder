@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "MAT_Water.Collect",
+		uint64 ResourceId = 56f6351bd760545a,
+	},
+},

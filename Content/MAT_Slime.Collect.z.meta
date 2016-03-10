@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "MAT_Slime.Collect",
+		uint64 ResourceId = 56f6396c5bf173bc,
+	},
+},

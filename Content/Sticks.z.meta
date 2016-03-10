@@ -1,8 +1,0 @@
-TextContent = 
-{
-	ZilchScriptBuilder = 
-	{
-		string Name = "Sticks",
-		uint64 ResourceId = 56ca18a9fb984a50,
-	},
-},

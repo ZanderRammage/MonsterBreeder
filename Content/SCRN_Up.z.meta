@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "SCRN_Up",
+		uint64 ResourceId = 56c8c048513e174b,
+	},
+},

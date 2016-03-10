@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "SCRB_Left",
+		uint64 ResourceId = 56f7699ca4fa4719,
+	},
+},

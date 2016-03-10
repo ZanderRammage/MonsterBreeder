@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "MAT_Shells.Collect",
+		uint64 ResourceId = 56f635b0bd52a62d,
+	},
+},
