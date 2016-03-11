@@ -19,6 +19,9 @@ class Inventory : ZilchComponent
     [Property]
     var Water : Integer;
     
+    var InventoryOpen : Boolean = false;
+    
+    
     function Initialize(init : CogInitializer)
     {
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
@@ -27,7 +30,25 @@ class Inventory : ZilchComponent
     
     function OnLogicUpdate(event : UpdateEvent)
     {
-        Console.WriteLine("Sticks: `this.Sticks` | Stones: `this.Stones` | Slime: `this.Slime`  | Anise: `this.Anise` | Toadstool: `this.Toadstools`");
-        Console.WriteLine("Red Liquid: `this.TotallyNotBlood` | Crabs: `this.Crabs`  | Shells: `this.Shells` | Water: `this.Water`");
+        /*var sticks;
+        var stones;
+        var slime;
+        var anise;
+        var toadstool;
+        var totallyNotBlood;
+        var crabs;
+        var shells;
+        var crabs;*/
+        
+        if(Zero.Keyboard.KeyIsPressed(Keys.E) && this.InventoryOpen == false)
+        {
+            this.Space.FindObjectByName("Inventory").Sprite.Visible = true;
+            this.InventoryOpen = true;
+        }
+        if(Zero.Keyboard.KeyIsPressed(Keys.E) && this.InventoryOpen == true)
+        {
+            this.Space.FindObjectByName("Inventory").Sprite.Visible = false;
+            this.InventoryOpen = false;
+        }
     }
 }

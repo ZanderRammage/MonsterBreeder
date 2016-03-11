@@ -1,0 +1,30 @@
+class MiniMap : ZilchComponent
+{
+    var ScreenNum : Integer = 12;
+    var Hidden : Boolean = false;
+    
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        var frame = this.Owner.Sprite.SpriteSource;
+        
+        frame = SpriteSource.Find("MiniMap`this.ScreenNum`");
+        
+        this.Owner.Sprite.SpriteSource = frame;
+        
+        if(Zero.Keyboard.KeyIsPressed(Keys.M) && this.Hidden == false)
+        {
+            this.Owner.Sprite.Visible = false;
+            this.Hidden = true;
+        }
+        else if(Zero.Keyboard.KeyIsPressed(Keys.M) && this.Hidden == true)
+        {
+            this.Owner.Sprite.Visible = true;
+            this.Hidden = false;
+        }
+    }
+}

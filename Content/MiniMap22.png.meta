@@ -1,0 +1,20 @@
+ImageContent = 
+{
+	SpriteSourceBuilder = 
+	{
+		string Name = "MiniMap22",
+		uint64 ResourceId = 56f4c62e6c2abf39,
+		uint64 AtlasId = 5274cf95e4a661fd,
+		uint FrameSizeX = 220,
+		uint FrameSizeY = 170,
+		uint FrameCount = 1,
+		float FrameDelay = 0.0833333358,
+		float OriginX = 110,
+		float OriginY = 85,
+		float PixelsPerUnit = 220,
+		bool Smoothing = false,
+		bool Looping = true,
+		Vec4 Slices = [0, 0, 0, 0],
+		SpriteFill Fill = Stretch,
+	},
+},

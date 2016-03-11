@@ -2,7 +2,7 @@ TextContent =
 {
 	ZilchScriptBuilder = 
 	{
-		string Name = "SCRB_Left",
+		string Name = "SCRN_Left",
 		uint64 ResourceId = 56f7699ca4fa4719,
 	},
 },
