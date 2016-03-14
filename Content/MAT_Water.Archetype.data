@@ -8,9 +8,13 @@ Cog =
 	{
 		string Name = "Water",
 	},
+	Archetyped = 
+	{
+		string Name = "56f6353dd8d08a7f:MAT_Water",
+	},
 	Transform = 
 	{
-		Vec3 Translation = [5.86876297, -0.209203511, 0],
+		Vec3 Translation = [14.4849014, -4.5805397, 2.50025177],
 		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -24,13 +28,25 @@ Cog =
 		BlendMode BlendMode = Alpha,
 		SpriteGeometryMode GeometryMode = ZPlane,
 		string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-		string SpriteSource = "5275aa4d802dd6dc:Square",
+		string SpriteSource = "56f4d0fe631fe1aa:water",
 		bool RenderMask = false,
 		bool FlipX = false,
 		bool FlipY = false,
 		bool AnimationActive = true,
 		float AnimationSpeed = 1,
 		uint StartFrame = 0,
+	},
+	RigidBody = 
+	{
+		bool Static = true,
+		bool Asleep = false,
+		bool Kinematic = false,
+		bool RotationLocked = false,
+		bool Mode2D = true,
+		bool AllowSleep = true,
+		bool Inherit2DMode = true,
+		Vec3 Velocity = [0, 0, 0],
+		Vec3 AngularVelocity = [0, 0, 0],
 	},
 	BoxCollider = 
 	{

@@ -4,6 +4,7 @@ class GoUp : ZilchComponent
     var Camera : Real3;
     var MiniMap : Real3;
     var ScreenNum : Integer;
+    var ScreenY : Integer;
     
     
     function Initialize(init : CogInitializer)
@@ -19,6 +20,7 @@ class GoUp : ZilchComponent
         this.Camera = this.Space.FindObjectByName("Camera").Transform.Translation;
         this.MiniMap = this.Space.FindObjectByName("MiniMap").Transform.Translation;
         this.ScreenNum = this.Space.FindObjectByName("MiniMap").MiniMap.ScreenNum;
+        this.ScreenY = this.Space.FindObjectByName("Player").Inventory.ScreenY;
     }
     
     
@@ -30,11 +32,13 @@ class GoUp : ZilchComponent
             this.Player.Y += 5;
             this.MiniMap.Y += 22;
             this.ScreenNum -= 5;
+            this.ScreenY += 22;
         }
         
         this.Space.FindObjectByName("Player").Transform.Translation = this.Player;
         this.Space.FindObjectByName("Camera").Transform.Translation = this.Camera;
         this.Space.FindObjectByName("MiniMap").Transform.Translation = this.MiniMap;
         this.Space.FindObjectByName("MiniMap").MiniMap.ScreenNum = this.ScreenNum;
+        this.Space.FindObjectByName("Player").Inventory.ScreenY = this.ScreenY;
     }
 }

@@ -1,0 +1,13 @@
+class TXT_StoneUpdate : ZilchComponent
+{
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        var stones = this.Space.FindObjectByName("Player").Inventory.Stones;
+        this.Owner.SpriteText.Text = ("`stones`");
+    }
+}

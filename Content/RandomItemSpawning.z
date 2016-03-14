@@ -1,0 +1,79 @@
+class RandomItemSpawning : ZilchComponent
+{
+    var RandomGenerator : Random = Random();
+    
+    
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+        
+        for(var i = -95; i < 95; ++i)
+        {
+            for(var j = -53; j < 53; ++j)
+            {
+                var roll = this.RandomGenerator.DieRoll(250);
+                
+                if(roll == 1)
+                {
+                    var createPosition = Real3(i, j, 0);
+                    var archetypeToSpawn = Archetype.Find("MAT_Sticks");
+                    this.Space.CreateAtPosition(archetypeToSpawn, createPosition);
+                }
+                if(roll == 2)
+                {
+                    var createPosition = Real3(i, j, 0);
+                    var archetypeToSpawn = Archetype.Find("MAT_Stones");
+                    this.Space.CreateAtPosition(archetypeToSpawn, createPosition);
+                }
+                if(roll == 3)
+                {
+                    var createPosition = Real3(i, j, 0);
+                    var archetypeToSpawn = Archetype.Find("MAT_Slime");
+                    this.Space.CreateAtPosition(archetypeToSpawn, createPosition);
+                }
+                if(roll == 4)
+                {
+                    var createPosition = Real3(i, j, 0);
+                    var archetypeToSpawn = Archetype.Find("MAT_Anise");
+                    this.Space.CreateAtPosition(archetypeToSpawn, createPosition);
+                }
+                if(roll == 5)
+                {
+                    var createPosition = Real3(i, j, 0);
+                    var archetypeToSpawn = Archetype.Find("MAT_Toadstool");
+                    this.Space.CreateAtPosition(archetypeToSpawn, createPosition);
+                }
+                if(roll == 6)
+                {
+                    var createPosition = Real3(i, j, 0);
+                    var archetypeToSpawn = Archetype.Find("MAT_TotallyNotBlood");
+                    this.Space.CreateAtPosition(archetypeToSpawn, createPosition);
+                }
+                if(roll == 7)
+                {
+                    var createPosition = Real3(i, j, 0);
+                    var archetypeToSpawn = Archetype.Find("MAT_Crabs");
+                    this.Space.CreateAtPosition(archetypeToSpawn, createPosition);
+                }
+                if(roll == 8)
+                {
+                    var createPosition = Real3(i, j, 0);
+                    var archetypeToSpawn = Archetype.Find("MAT_Shells");
+                    this.Space.CreateAtPosition(archetypeToSpawn, createPosition);
+                }
+                if(roll == 9)
+                {
+                    var createPosition = Real3(i, j, 0);
+                    var archetypeToSpawn = Archetype.Find("MAT_Water");
+                    this.Space.CreateAtPosition(archetypeToSpawn, createPosition);
+                }
+            }
+        }
+    }
+    
+        
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        
+    }
+}

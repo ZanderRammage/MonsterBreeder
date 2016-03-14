@@ -1,0 +1,13 @@
+class TXT_StickUpdate : ZilchComponent
+{
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        var sticks = this.Space.FindObjectByName("Player").Inventory.Sticks;
+        this.Owner.SpriteText.Text = ("`sticks`");
+    }
+}

@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "TXT_Anise.Update",
+		uint64 ResourceId = 56f0e3eea44ad284,
+	},
+},

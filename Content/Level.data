@@ -90,6 +90,9 @@ Level =
 			int HilightInterval = 10,
 			bool FollowEditorCamera = false,
 		},
+		RandomItemSpawning = 
+		{
+		},
 	},
 	Cog = 
 	{
@@ -103,7 +106,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-2.31135488, 3.27538896, 50.4995003],
+			Vec3 Translation = [-110.09729, -3.08986306, 52.500248],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278471e-008, 0, 1],
 		},
@@ -115,7 +118,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 14.956872,
+			float Size = 30.1194649,
 		},
 		EditorCameraController = 
 		{
@@ -123,7 +126,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [-2.31135488, 3.27538896, 0.499499977],
+			Vec3 LookTarget = [-110.09729, -3.08986306, 2.50024652],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -1361,7 +1364,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [7.72300625, -3.32279849, 0.499500275],
+			Vec3 Translation = [7.72300625, -3.38393044, 0],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
@@ -1370,68 +1373,22 @@ Level =
 			string Name = "Sticks",
 		},
 	},
-	Cog = 
+	ArchetypeInstance = 
 	{
+		string Name = "56f638d4645c6148:MAT_Stones",
 		LinkId = 
 		{
 			uint Id = 35,
 		},
-		Named = 
-		{
-			string Name = "Stones",
-		},
-		Archetyped = 
-		{
-			string Name = "56f638d4645c6148:MAT_Stones",
-		},
 		Transform = 
 		{
-			Vec3 Translation = [7.5559206, -5.04933071, 0.499500275],
+			Vec3 Translation = [7.5559206, -5.04933071, 0],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
-		Sprite = 
+		Named = 
 		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [1, 1, 1, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "56f4f47374d2ca32:Stones",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-		RigidBody = 
-		{
-			bool Static = true,
-			bool Asleep = false,
-			bool Kinematic = false,
-			bool RotationLocked = false,
-			bool Mode2D = true,
-			bool AllowSleep = true,
-			bool Inherit2DMode = true,
-			Vec3 Velocity = [0, 0, 0],
-			Vec3 AngularVelocity = [0, 0, 0],
-		},
-		BoxCollider = 
-		{
-			bool Ghost = true,
-			bool SendsMessages = true,
-			bool Seamless = true,
-			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-			string SerializedGroupName = "4e740859314e5515:DefaultGroup",
-			Vec3 Offset = [0, 0, 0],
-			Vec3 Size = [0.5, 0.5, 0.5],
-		},
-		Stones = 
-		{
+			string Name = "Stones",
 		},
 	},
 	Cog = 
@@ -1484,7 +1441,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [0, 0, 2],
+			Vec3 Translation = [-110, 0, 2],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
@@ -1561,7 +1518,7 @@ Level =
 						},
 						Transform = 
 						{
-							Vec3 Translation = [-1, -1.5, 0],
+							Vec3 Translation = [0, -1.5, 0],
 							Vec3 Scale = [1, 1, 1],
 							Quat Rotation = [0, 0, 0, 1],
 						},
@@ -1578,9 +1535,12 @@ Level =
 							string FontName = "4e7bac697bec55c5:Verdana",
 							uint FontSize = 30,
 							string Text = "Sprite Text...",
-							TextAlign Align = Left,
+							TextAlign Align = Center,
 							float PixelsPerUnit = 64,
 							bool Smoothing = true,
+						},
+						TXT_StickUpdate = 
+						{
 						},
 					},
 				},
@@ -1593,7 +1553,7 @@ Level =
 				},
 				Named = 
 				{
-					string Name = "INV_Slime",
+					string Name = "INV_Stone",
 				},
 				Transform = 
 				{
@@ -1619,12 +1579,52 @@ Level =
 					float AnimationSpeed = 1,
 					uint StartFrame = 0,
 				},
+				Hierarchy = 
+				{
+					Cog = 
+					{
+						LinkId = 
+						{
+							uint Id = 41,
+						},
+						Named = 
+						{
+							string Name = "TXT_Stone",
+						},
+						Transform = 
+						{
+							Vec3 Translation = [0, -1.5, 0],
+							Vec3 Scale = [1, 1, 1],
+							Quat Rotation = [0, 0, 0, 1],
+						},
+						SpriteText = 
+						{
+							bool Visible = true,
+							bool VisibilityCulling = true,
+							bool VisibilityEvents = true,
+							bool CastShadows = false,
+							Vec4 Color = [0, 0, 0, 1],
+							BlendMode BlendMode = Alpha,
+							SpriteGeometryMode GeometryMode = ZPlane,
+							string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+							string FontName = "4e7bac697bec55c5:Verdana",
+							uint FontSize = 30,
+							string Text = "Sprite Text...",
+							TextAlign Align = Center,
+							float PixelsPerUnit = 64,
+							bool Smoothing = true,
+						},
+						TXT_StoneUpdate = 
+						{
+						},
+					},
+				},
 			},
 			Cog = 
 			{
 				LinkId = 
 				{
-					uint Id = 41,
+					uint Id = 42,
 				},
 				Named = 
 				{
@@ -1654,12 +1654,52 @@ Level =
 					float AnimationSpeed = 1,
 					uint StartFrame = 0,
 				},
+				Hierarchy = 
+				{
+					Cog = 
+					{
+						LinkId = 
+						{
+							uint Id = 43,
+						},
+						Named = 
+						{
+							string Name = "TXT_Slime",
+						},
+						Transform = 
+						{
+							Vec3 Translation = [0, -1.5, 0],
+							Vec3 Scale = [1, 1, 1],
+							Quat Rotation = [0, 0, 0, 1],
+						},
+						SpriteText = 
+						{
+							bool Visible = true,
+							bool VisibilityCulling = true,
+							bool VisibilityEvents = true,
+							bool CastShadows = false,
+							Vec4 Color = [0, 0, 0, 1],
+							BlendMode BlendMode = Alpha,
+							SpriteGeometryMode GeometryMode = ZPlane,
+							string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+							string FontName = "4e7bac697bec55c5:Verdana",
+							uint FontSize = 30,
+							string Text = "Sprite Text...",
+							TextAlign Align = Center,
+							float PixelsPerUnit = 64,
+							bool Smoothing = true,
+						},
+						TXT_SlimeUpdate = 
+						{
+						},
+					},
+				},
 			},
 			Cog = 
 			{
 				LinkId = 
 				{
-					uint Id = 42,
+					uint Id = 44,
 				},
 				Named = 
 				{
@@ -1689,12 +1729,52 @@ Level =
 					float AnimationSpeed = 1,
 					uint StartFrame = 0,
 				},
+				Hierarchy = 
+				{
+					Cog = 
+					{
+						LinkId = 
+						{
+							uint Id = 45,
+						},
+						Named = 
+						{
+							string Name = "TXT_Anise",
+						},
+						Transform = 
+						{
+							Vec3 Translation = [0, -1.5, 0],
+							Vec3 Scale = [1, 1, 1],
+							Quat Rotation = [0, 0, 0, 1],
+						},
+						SpriteText = 
+						{
+							bool Visible = true,
+							bool VisibilityCulling = true,
+							bool VisibilityEvents = true,
+							bool CastShadows = false,
+							Vec4 Color = [0, 0, 0, 1],
+							BlendMode BlendMode = Alpha,
+							SpriteGeometryMode GeometryMode = ZPlane,
+							string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+							string FontName = "4e7bac697bec55c5:Verdana",
+							uint FontSize = 30,
+							string Text = "Sprite Text...",
+							TextAlign Align = Center,
+							float PixelsPerUnit = 64,
+							bool Smoothing = true,
+						},
+						TXT_AniseUpdate = 
+						{
+						},
+					},
+				},
 			},
 			Cog = 
 			{
 				LinkId = 
 				{
-					uint Id = 43,
+					uint Id = 46,
 				},
 				Named = 
 				{
@@ -1724,12 +1804,52 @@ Level =
 					float AnimationSpeed = 1,
 					uint StartFrame = 0,
 				},
+				Hierarchy = 
+				{
+					Cog = 
+					{
+						LinkId = 
+						{
+							uint Id = 47,
+						},
+						Named = 
+						{
+							string Name = "TXT_Toadstool",
+						},
+						Transform = 
+						{
+							Vec3 Translation = [0, -1.5, 0],
+							Vec3 Scale = [1, 1, 1],
+							Quat Rotation = [0, 0, 0, 1],
+						},
+						SpriteText = 
+						{
+							bool Visible = true,
+							bool VisibilityCulling = true,
+							bool VisibilityEvents = true,
+							bool CastShadows = false,
+							Vec4 Color = [0, 0, 0, 1],
+							BlendMode BlendMode = Alpha,
+							SpriteGeometryMode GeometryMode = ZPlane,
+							string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+							string FontName = "4e7bac697bec55c5:Verdana",
+							uint FontSize = 30,
+							string Text = "Sprite Text...",
+							TextAlign Align = Center,
+							float PixelsPerUnit = 64,
+							bool Smoothing = true,
+						},
+						TXT_ToadstoolUpdate = 
+						{
+						},
+					},
+				},
 			},
 			Cog = 
 			{
 				LinkId = 
 				{
-					uint Id = 44,
+					uint Id = 48,
 				},
 				Named = 
 				{
@@ -1759,12 +1879,52 @@ Level =
 					float AnimationSpeed = 1,
 					uint StartFrame = 0,
 				},
+				Hierarchy = 
+				{
+					Cog = 
+					{
+						LinkId = 
+						{
+							uint Id = 49,
+						},
+						Named = 
+						{
+							string Name = "TXT_TotallyNotBlood",
+						},
+						Transform = 
+						{
+							Vec3 Translation = [0, -1.5, 0],
+							Vec3 Scale = [1, 1, 1],
+							Quat Rotation = [0, 0, 0, 1],
+						},
+						SpriteText = 
+						{
+							bool Visible = true,
+							bool VisibilityCulling = true,
+							bool VisibilityEvents = true,
+							bool CastShadows = false,
+							Vec4 Color = [0, 0, 0, 1],
+							BlendMode BlendMode = Alpha,
+							SpriteGeometryMode GeometryMode = ZPlane,
+							string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+							string FontName = "4e7bac697bec55c5:Verdana",
+							uint FontSize = 30,
+							string Text = "Sprite Text...",
+							TextAlign Align = Center,
+							float PixelsPerUnit = 64,
+							bool Smoothing = true,
+						},
+						TXT_TotallyNotBloodUpdate = 
+						{
+						},
+					},
+				},
 			},
 			Cog = 
 			{
 				LinkId = 
 				{
-					uint Id = 45,
+					uint Id = 50,
 				},
 				Named = 
 				{
@@ -1794,12 +1954,52 @@ Level =
 					float AnimationSpeed = 1,
 					uint StartFrame = 0,
 				},
+				Hierarchy = 
+				{
+					Cog = 
+					{
+						LinkId = 
+						{
+							uint Id = 51,
+						},
+						Named = 
+						{
+							string Name = "TXT_Crab",
+						},
+						Transform = 
+						{
+							Vec3 Translation = [0, -1.5, 0],
+							Vec3 Scale = [1, 1, 1],
+							Quat Rotation = [0, 0, 0, 1],
+						},
+						SpriteText = 
+						{
+							bool Visible = true,
+							bool VisibilityCulling = true,
+							bool VisibilityEvents = true,
+							bool CastShadows = false,
+							Vec4 Color = [0, 0, 0, 1],
+							BlendMode BlendMode = Alpha,
+							SpriteGeometryMode GeometryMode = ZPlane,
+							string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+							string FontName = "4e7bac697bec55c5:Verdana",
+							uint FontSize = 30,
+							string Text = "Sprite Text...",
+							TextAlign Align = Center,
+							float PixelsPerUnit = 64,
+							bool Smoothing = true,
+						},
+						TXT_CrabUpdate = 
+						{
+						},
+					},
+				},
 			},
 			Cog = 
 			{
 				LinkId = 
 				{
-					uint Id = 46,
+					uint Id = 52,
 				},
 				Named = 
 				{
@@ -1834,7 +2034,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 47,
+					uint Id = 53,
 				},
 				Named = 
 				{
@@ -1865,6 +2065,178 @@ Level =
 					uint StartFrame = 0,
 				},
 			},
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "56f637c158f41d1d:MAT_Anise",
+		LinkId = 
+		{
+			uint Id = 54,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [12.0702028, 1.77714968, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Anise",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "56f636fd952acac2:MAT_Crabs",
+		LinkId = 
+		{
+			uint Id = 55,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [11.703413, 0.0348980427, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Crabs",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "56f6358cbfdae390:MAT_Shells",
+		LinkId = 
+		{
+			uint Id = 56,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [12.4675579, -2.80772233, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Shells",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "56f638a2673ca9d2:MAT_Slime",
+		LinkId = 
+		{
+			uint Id = 57,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [9.07475376, 1.25753069, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Slime",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "56f6375c77914c0b:MAT_Toadstool",
+		LinkId = 
+		{
+			uint Id = 58,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [15.2490482, 0.126595497, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Toadstool",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "56f636b3843ee2f5:MAT_TotallyNotBlood",
+		LinkId = 
+		{
+			uint Id = 59,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [15.1267843, -1.76848471, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "TotallyNotBlood",
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 60,
+		},
+		Named = 
+		{
+			string Name = "Water",
+		},
+		Archetyped = 
+		{
+			string Name = "56f6353dd8d08a7f:MAT_Water",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [14.4849014, -4.5805397, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "56f4d0fe631fe1aa:water",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		RigidBody = 
+		{
+			bool Static = true,
+			bool Asleep = false,
+			bool Kinematic = false,
+			bool RotationLocked = false,
+			bool Mode2D = true,
+			bool AllowSleep = true,
+			bool Inherit2DMode = true,
+			Vec3 Velocity = [0, 0, 0],
+			Vec3 AngularVelocity = [0, 0, 0],
+		},
+		BoxCollider = 
+		{
+			bool Ghost = false,
+			bool SendsMessages = true,
+			bool Seamless = true,
+			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+			string SerializedGroupName = "4e740859314e5515:DefaultGroup",
+			Vec3 Offset = [0, 0, 0],
+			Vec3 Size = [0.5, 0.5, 0.5],
+		},
+		Water = 
+		{
 		},
 	},
 },

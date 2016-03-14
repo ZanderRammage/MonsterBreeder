@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "TXT_Stone.Update",
+		uint64 ResourceId = 56f0ec4587ce5bd2,
+	},
+},

@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "TXT_SlimeUpdate",
+		uint64 ResourceId = 56f0e3b496fba96c,
+	},
+},

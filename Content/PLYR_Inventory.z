@@ -20,11 +20,13 @@ class Inventory : ZilchComponent
     var Water : Integer;
     
     var InventoryOpen : Boolean = false;
-    
+    var ScreenX : Integer = -10;
+    var ScreenY : Integer = 0;
     
     function Initialize(init : CogInitializer)
     {
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+        Zero.Connect(Zero.Keyboard, Events.KeyDown, this.OnKeyDown);
     }
     
     
@@ -40,15 +42,44 @@ class Inventory : ZilchComponent
         var shells;
         var crabs;*/
         
+        var inventoryPos = Real3();
+        var currentRoom = this.Space.FindObjectByName("MiniMap").MiniMap.ScreenNum;
+        
+        if(this.InventoryOpen == true)
+        {
+            var screenPos = Real3(this.ScreenX, this.ScreenY, 2);
+            this.Space.FindObjectByName("Inventory").Transform.Translation = screenPos;
+            Console.WriteLine("`screenPos`");
+        }
+        else if(this.InventoryOpen == false)
+        {
+            this.Space.FindObjectByName("Inventory").Transform.Translation = Real3(-110, 0, 2);
+        }
+    }
+        
+        
+    function OnKeyDown(event : KeyboardEvent)
+    {
         if(Zero.Keyboard.KeyIsPressed(Keys.E) && this.InventoryOpen == false)
         {
-            this.Space.FindObjectByName("Inventory").Sprite.Visible = true;
+            this.Space.TimeSpace.TogglePause();
             this.InventoryOpen = true;
         }
-        if(Zero.Keyboard.KeyIsPressed(Keys.E) && this.InventoryOpen == true)
+        else if(Zero.Keyboard.KeyIsPressed(Keys.E) && this.InventoryOpen == true)
         {
-            this.Space.FindObjectByName("Inventory").Sprite.Visible = false;
+            this.Space.TimeSpace.TogglePause();
             this.InventoryOpen = false;
+        }
+        
+        if(this.InventoryOpen == true)
+        {
+            var screenPos = Real3(this.ScreenX, this.ScreenY, 2);
+            this.Space.FindObjectByName("Inventory").Transform.Translation = screenPos;
+            Console.WriteLine("`screenPos`");
+        }
+        else if(this.InventoryOpen == false)
+        {
+            this.Space.FindObjectByName("Inventory").Transform.Translation = Real3(-110, 0, 2);
         }
     }
 }

@@ -1,0 +1,13 @@
+class TXT_TotallyNotBloodUpdate : ZilchComponent
+{
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        var totallyNotBlood = this.Space.FindObjectByName("Player").Inventory.TotallyNotBlood;
+        this.Owner.SpriteText.Text = ("`totallyNotBlood`");
+    }
+}

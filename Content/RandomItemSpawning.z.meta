@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "RandomItemSpawning",
+		uint64 ResourceId = 56f0f6443dc5f6c1,
+	},
+},
