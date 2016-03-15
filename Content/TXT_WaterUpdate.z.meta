@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "TXT_WaterUpdate",
+		uint64 ResourceId = 56ffb408bc35f243,
+	},
+},

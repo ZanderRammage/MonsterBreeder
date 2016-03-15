@@ -1,0 +1,37 @@
+class EGG_Crafting1 : ZilchComponent
+{
+    var MousePos : Real2;
+    var MouseWorldPos : Real3;
+    var Spawned : Boolean = false;
+    
+    
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+        Zero.Connect(this.Owner, Events.MouseEnter, this.OnMouseEnter);
+        Zero.Connect(this.Owner, Events.MouseExit, this.OnMouseExit);
+    }
+    
+    
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        
+    }
+    
+    
+    function OnMouseEnter(event : ViewportMouseEvent)
+    {
+        this.MousePos = Zero.Mouse.ScreenPosition;
+        this.MouseWorldPos = this.LevelSettings.CameraViewport.ScreenToWorldZPlane(this.MousePos, 0);
+        var archetypeToSpawn = Archetype.Find("INF_UP_2");
+        var infoBox = this.Space.CreateAtPosition(archetypeToSpawn, this.MouseWorldPos);
+        this.Spawned = true;
+    }
+    
+    
+    function OnMouseExit(event : ViewportMouseEvent)
+    {
+        this.Space.FindObjectByName("Info2").Destroy();
+        this.Spawned = false;
+    }
+}

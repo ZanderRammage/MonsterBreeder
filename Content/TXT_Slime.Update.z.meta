@@ -2,7 +2,7 @@ TextContent =
 {
 	ZilchScriptBuilder = 
 	{
-		string Name = "TXT_SlimeUpdate",
+		string Name = "TXT_Slime.Update",
 		uint64 ResourceId = 56f0e3b496fba96c,
 	},
 },

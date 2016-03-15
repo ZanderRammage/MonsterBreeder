@@ -1,0 +1,20 @@
+class EGG_Move1 : ZilchComponent
+{
+    var MousePos : Real2;
+    var MouseWorldPos : Real3;
+    
+    
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+    
+    
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        this.MousePos = Zero.Mouse.ScreenPosition;
+        this.MouseWorldPos = this.LevelSettings.CameraViewport.ScreenToWorldZPlane(this.MousePos, 0);
+        this.MouseWorldPos.X -= 4.25;
+        this.Owner.Transform.Translation = this.MouseWorldPos;
+    }
+}

@@ -2,7 +2,7 @@ TextContent =
 {
 	ZilchScriptBuilder = 
 	{
-		string Name = "TXT_ToadstoolUpdate",
+		string Name = "TXT_Toadstool.Update",
 		uint64 ResourceId = 56f0cf66c63d5615,
 	},
 },

@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "EGG_Crafting.1",
+		uint64 ResourceId = 56ffb55192e7fc29,
+	},
+},

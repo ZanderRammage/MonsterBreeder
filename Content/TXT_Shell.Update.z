@@ -1,0 +1,13 @@
+class TXT_ShellUpdate : ZilchComponent
+{
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        var shell = this.Space.FindObjectByName("Player").Inventory.Shells;
+        this.Owner.SpriteText.Text = ("`shell`");
+    }
+}

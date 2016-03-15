@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [14.4849014, -4.5805397, 2.50025177],
+		Vec3 Translation = [13.7940226, -2.65214777, 2.50025177],
 		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -57,5 +57,8 @@ Cog =
 		string SerializedGroupName = "4e740859314e5515:DefaultGroup",
 		Vec3 Offset = [0, 0, 0],
 		Vec3 Size = [0.5, 0.5, 0.5],
+	},
+	Water = 
+	{
 	},
 },

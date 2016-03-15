@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "EGG_Move.1",
+		uint64 ResourceId = 56ff9893e959812b,
+	},
+},

@@ -1,0 +1,87 @@
+class Crafting : ZilchComponent
+{
+    var CratOpen : Boolean = false;
+    var ScreenX : Integer;
+    var ScreenY : Integer;
+    
+    
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+        Zero.Connect(Zero.Keyboard, Events.KeyDown, this.OnKeyDown);
+        Zero.Connect(this.Owner, Events.MouseEnter, this.OnMouseEnter);
+        Zero.Connect(this.Owner, Events.MouseDown, this.OnMouseDown);
+        Zero.Connect(this.Owner, Events.MouseUp, this.OnMouseUp);
+        Zero.Connect(this.Owner, Events.MouseExit, this.OnMouseExit);
+    }
+    
+    
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        this.ScreenX = this.Space.FindObjectByName("Player").Inventory.ScreenX;
+        this.ScreenY = this.Space.FindObjectByName("Player").Inventory.ScreenY;
+        
+        var currentRoom = this.Space.FindObjectByName("MiniMap").MiniMap.ScreenNum;
+        
+        if(this.CratOpen == true)
+        {
+            var screenPos = Real3(this.ScreenX, this.ScreenY, 2);
+            this.Space.FindObjectByName("Craft").Transform.Translation = screenPos;
+            Console.WriteLine("`screenPos`");
+        }
+        else if(this.CratOpen == false)
+        {
+            this.Space.FindObjectByName("Craft").Transform.Translation = Real3(-110, 0, 2);
+        }
+    }
+    
+    
+    function OnKeyDown(event : KeyboardEvent)
+    {
+        if(Zero.Keyboard.KeyIsPressed(Keys.C) && this.CratOpen == false)
+        {
+            this.Space.TimeSpace.TogglePause();
+            this.CratOpen = true;
+        }
+        else if(Zero.Keyboard.KeyIsPressed(Keys.C) && this.CratOpen == true)
+        {
+            this.Space.TimeSpace.TogglePause();
+            this.CratOpen = false;
+        }
+        
+        if(this.CratOpen == true)
+        {
+            var screenPos = Real3(this.ScreenX, this.ScreenY, 2);
+            this.Space.FindObjectByName("Craft").Transform.Translation = screenPos;
+            Console.WriteLine("`screenPos`");
+        }
+        else if(this.CratOpen == false)
+        {
+            this.Space.FindObjectByName("Craft").Transform.Translation = Real3(-110, 0, 2);
+        }
+    }
+    
+    
+    function OnMouseEnter(event : ViewportMouseEvent)
+    {
+        
+    }
+    
+    
+    function OnMouseDown(event : ViewportMouseEvent)
+    {
+        
+    }
+    
+    
+    function OnMouseUp(event : ViewportMouseEvent)
+    {
+        
+    }
+    
+    
+    function OnMouseExit(event : ViewportMouseEvent)
+    {
+        
+    }
+}

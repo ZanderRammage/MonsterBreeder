@@ -2,7 +2,7 @@ TextContent =
 {
 	ZilchScriptBuilder = 
 	{
-		string Name = "TXT_CrabUpdate",
+		string Name = "TXT_Crab.Update",
 		uint64 ResourceId = 56f0ce59f6168e9e,
 	},
 },

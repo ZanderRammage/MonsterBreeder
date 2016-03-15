@@ -2,7 +2,7 @@ TextContent =
 {
 	ZilchScriptBuilder = 
 	{
-		string Name = "TXT_TotallyNotBloodUpdate",
+		string Name = "TXT_TotallyNotBlood.Update",
 		uint64 ResourceId = 56f0cee2e1a22ee7,
 	},
 },

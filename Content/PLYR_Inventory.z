@@ -42,7 +42,6 @@ class Inventory : ZilchComponent
         var shells;
         var crabs;*/
         
-        var inventoryPos = Real3();
         var currentRoom = this.Space.FindObjectByName("MiniMap").MiniMap.ScreenNum;
         
         if(this.InventoryOpen == true)
