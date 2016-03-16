@@ -2,7 +2,7 @@ ImageContent =
 {
 	SpriteSourceBuilder = 
 	{
-		string Name = "totallynotblood",
+		string Name = "TotallyNotBlood",
 		uint64 ResourceId = 56f4d08a53c3b551,
 		uint64 AtlasId = 5274cf95e4a661fd,
 		uint FrameSizeX = 0,

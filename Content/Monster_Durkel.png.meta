@@ -1,0 +1,20 @@
+ImageContent = 
+{
+	SpriteSourceBuilder = 
+	{
+		string Name = "Monster_Durkel",
+		uint64 ResourceId = 56fe522ee0d59b9a,
+		uint64 AtlasId = 5274cf95e4a661fd,
+		uint FrameSizeX = 130,
+		uint FrameSizeY = 130,
+		uint FrameCount = 11,
+		float FrameDelay = 0.0833333358,
+		float OriginX = 65,
+		float OriginY = 65,
+		float PixelsPerUnit = 64,
+		bool Smoothing = false,
+		bool Looping = true,
+		Vec4 Slices = [0, 0, 0, 0],
+		SpriteFill Fill = Stretch,
+	},
+},

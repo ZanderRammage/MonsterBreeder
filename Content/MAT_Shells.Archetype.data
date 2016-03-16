@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [12.4675579, -2.80772233, 2.50025177],
+		Vec3 Translation = [8.77023506, -1.42218125, 2.50025558],
 		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -51,14 +51,16 @@ Cog =
 	Shells = 
 	{
 	},
-	BoxCollider = 
+	CapsuleCollider = 
 	{
 		bool Ghost = false,
 		bool SendsMessages = true,
 		bool Seamless = true,
 		string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
 		string SerializedGroupName = "4e740859314e5515:DefaultGroup",
-		Vec3 Offset = [0, 0, 0],
-		Vec3 Size = [0.5, 0.5, 0.5],
+		Vec3 Offset = [-0.150000006, 0, 0],
+		float Radius = 0.75,
+		float Height = 0.5,
+		uint Direction = 1,
 	},
 },

@@ -2,7 +2,7 @@ ImageContent =
 {
 	SpriteSourceBuilder = 
 	{
-		string Name = "toadstool",
+		string Name = "Toadstool",
 		uint64 ResourceId = 56f4d08a53c2684d,
 		uint64 AtlasId = 5274cf95e4a661fd,
 		uint FrameSizeX = 0,

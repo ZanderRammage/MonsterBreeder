@@ -2,7 +2,7 @@ ImageContent =
 {
 	SpriteSourceBuilder = 
 	{
-		string Name = "shell",
+		string Name = "Shell",
 		uint64 ResourceId = 56f4d0fe6320a78d,
 		uint64 AtlasId = 5274cf95e4a661fd,
 		uint FrameSizeX = 0,

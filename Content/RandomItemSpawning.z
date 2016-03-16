@@ -11,7 +11,7 @@ class RandomItemSpawning : ZilchComponent
         {
             for(var j = -53; j < 53; ++j)
             {
-                var roll = this.RandomGenerator.DieRoll(250);
+                var roll = this.RandomGenerator.DieRoll(350);
                 
                 if(roll == 1)
                 {
@@ -23,12 +23,6 @@ class RandomItemSpawning : ZilchComponent
                 {
                     var createPosition = Real3(i, j, 0);
                     var archetypeToSpawn = Archetype.Find("MAT_Stones");
-                    this.Space.CreateAtPosition(archetypeToSpawn, createPosition);
-                }
-                if(roll == 5)
-                {
-                    var createPosition = Real3(i, j, 0);
-                    var archetypeToSpawn = Archetype.Find("MAT_Toadstool");
                     this.Space.CreateAtPosition(archetypeToSpawn, createPosition);
                 }
             }

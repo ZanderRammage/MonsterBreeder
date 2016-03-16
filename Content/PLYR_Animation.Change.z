@@ -23,9 +23,9 @@ class PlayerAniChange : ZilchComponent
     
     function OnKeyDown(event : KeyboardEvent)
     {
-        if(event.Key == Keys.W || event.Key == Keys.Up && this.Owner.Sprite.SpriteSource.Name != "WalkBackWard2")
+        if(event.Key == Keys.W || event.Key == Keys.Up && this.Owner.Sprite.SpriteSource.Name != "WalkBackWard1")
         {
-            this.Owner.Sprite.SpriteSource = SpriteSource.Find("WalkBackWard2");
+            this.Owner.Sprite.SpriteSource = SpriteSource.Find("WalkBackWard1");
             this.Up = true;
         }
         

@@ -2,7 +2,7 @@ ImageContent =
 {
 	SpriteSourceBuilder = 
 	{
-		string Name = "egg1",
+		string Name = "Egg1",
 		uint64 ResourceId = 56c8d1b2601f8295,
 		uint64 AtlasId = 5274cf95e4a661fd,
 		uint FrameSizeX = 130,

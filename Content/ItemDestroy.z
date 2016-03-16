@@ -1,0 +1,27 @@
+class ItemDestroy : ZilchComponent
+{
+    function Initialize(init : CogInitializer)
+    {
+        //Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+        Zero.Connect(this.Owner, Events.CollisionPersisted, this.OnCollisionPersisted);
+    }
+    
+    
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+    }
+    
+    
+    function OnCollisionPersisted(event : CollisionEvent)
+    {
+        if(event.OtherObject.Name != "Player" && 
+           event.OtherObject.Name != "GoUp" && 
+           event.OtherObject.Name != "GoDown" && 
+           event.OtherObject.Name != "GoLeft" && 
+           event.OtherObject.Name != "Border" && 
+           event.OtherObject.Name != "Border2")
+        {
+            event.OtherObject.Destroy();
+        }
+    }
+}
