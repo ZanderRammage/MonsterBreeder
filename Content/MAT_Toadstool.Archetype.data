@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [13.1144104, -3.42718649, 2.50025558],
+		Vec3 Translation = [51.2340317, 14.9481955, -0.100000001],
 		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -28,7 +28,7 @@ Cog =
 		BlendMode BlendMode = Alpha,
 		SpriteGeometryMode GeometryMode = ZPlane,
 		string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-		string SpriteSource = "56f4d08a53c2684d:toadstool",
+		string SpriteSource = "56f4d08a53c2684d:Toadstool",
 		bool RenderMask = false,
 		bool FlipX = false,
 		bool FlipY = false,

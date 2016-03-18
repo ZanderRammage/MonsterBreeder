@@ -33,12 +33,12 @@ class GoRight : ZilchComponent
             this.MiniMap.X += 39;
             this.ScreenNum += 1;
             this.ScreenX += 39;
+            
+            this.Space.FindObjectByName("Player").Transform.Translation = this.Player;
+            this.Space.FindObjectByName("Camera").Transform.Translation = this.Camera;
+            this.Space.FindObjectByName("MiniMap").Transform.Translation = this.MiniMap;
+            this.Space.FindObjectByName("MiniMap").MiniMap.ScreenNum = this.ScreenNum;
+            this.Space.FindObjectByName("Player").Inventory.ScreenX = this.ScreenX;
         }
-        
-        this.Space.FindObjectByName("Player").Transform.Translation = this.Player;
-        this.Space.FindObjectByName("Camera").Transform.Translation = this.Camera;
-        this.Space.FindObjectByName("MiniMap").Transform.Translation = this.MiniMap;
-        this.Space.FindObjectByName("MiniMap").MiniMap.ScreenNum = this.ScreenNum;
-        this.Space.FindObjectByName("Player").Inventory.ScreenX = this.ScreenX;
     }
 }

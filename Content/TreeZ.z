@@ -1,0 +1,27 @@
+class TreeZ : ZilchComponent
+{
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        var player = this.Space.FindObjectByName("Player").Transform.Translation.Y;
+        var newZ = Real();
+        if(this.Owner.Transform.Translation.Y - 3.4125 >= player)
+        {
+            newZ = -1;
+            Console.WriteLine("Below: `this.Owner.Transform.Translation.Z`");
+        }
+        else if(this.Owner.Transform.Translation.Y -3.4125 <= player)
+        {
+            newZ = 1;
+            Console.WriteLine("Above: `this.Owner.Transform.Translation.Z`");
+        }
+        var test = this.Owner.Transform.Translation;
+        test.Z = newZ;
+        this.Owner.Transform.Translation = test;
+        Console.WriteLine(player);
+    }
+}
